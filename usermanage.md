@@ -61,8 +61,33 @@
    - undefine 
 
 ### GET UserManager/roles/{id}/claims
+##### input query 
+```
+id -> the id of role
+``` 
 ```
 {
+    string Id 
+    string ClaimType 
+    string ClaimValue
+}[]
+```
 
+### POST UserManager/roles/{id}/claims
+##### input query 
+```
+id -> the id of role
+``` 
+##### input body
+```
+{
+    string ClaimType 
+    string ClaimValue
 }
+```
+
+### DELETE UserManager/roles/claims/{id}
+###### input query
+```
+id -> the id of claim of the role 
 ```
