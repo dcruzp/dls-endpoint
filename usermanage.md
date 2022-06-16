@@ -59,3 +59,10 @@
 
 ### POST UserManage
    - undefine 
+
+### GET UserManager/roles/{id}/claims
+```
+{
+
+}
+```
