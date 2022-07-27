@@ -6,7 +6,7 @@
     string Name
     string UserName
     string Email
-    string userType
+    string UserType
     bool? Enable
     string Phone
     DateTime CreatedDate
@@ -48,6 +48,7 @@
 ```
 
 ### POST UserManager/roles
+##### input body
 ```
 {
     string name 
@@ -56,7 +57,11 @@
 }
 ```
 
-
+### DELETE UserManager/roles/{id}
+##### input query
+```
+    id -> the id of role to delete 
+```
 ### POST UserManage
    - undefine 
 
@@ -90,4 +95,49 @@ id -> the id of role
 ###### input query
 ```
 id -> the id of claim of the role 
+```
+
+
+### GET UserManager/contact
+
+```
+{
+    string name
+    string login 
+    string phone 
+    string email 
+    DateTime createDate 
+}[]
+```
+
+### GET UserManager/contact/agents
+```
+{
+    Guid id 
+    Guid ContactId 
+    Guid agentId 
+    Guid resourceId
+    DateTime createDate 
+    string createBy  
+}[]
+```
+
+### POST UserManage/assign/user/contact
+###### input body 
+```
+{
+    string userId 
+    Guid contactId
+}
+```
+
+
+### POST UserManage/assing/contact/agent
+###### input body 
+```
+{
+    Guid contactId 
+    Guid agentId 
+    Guid resourceId 
+}
 ```
