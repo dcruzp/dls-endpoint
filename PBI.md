@@ -1,5 +1,6 @@
 # PBI
 
+How is mapping all fields between the models that is send to the UI and entities that are modeled in the database.  
 #### Users 
 
 |Model          | Entity                                        | Type      |  
@@ -21,7 +22,7 @@
 
 3- There is a Endpoint for get all EntityMetada from Database. The Endpoint is ```GET /EntityMetadata``` 
 
-4- In endpoint ```Get -> /Contacts``` in the model que se le entrega al UI estan los campos Email, Name y el EntityMetadataId.
+4- In endpoint ```GET -> /Contacts``` in the model que se le entrega al UI estan los campos Email, Name y el EntityMetadataId.
 
 5- Updating and changing endpoint of Identity Server Project 
 
