@@ -80,7 +80,7 @@ This task is with the goal for register a new user and link that user with a Con
 
 - Assing a Contact to a user. For that we need the user's id and contact. So should check if a endpoint exist for this functionality, and  if it does not exist, create a new endpoint for that. The endpoint specification will descibed below: 
 
-    - ```POST  {host:port}/api/{id}/link{contact_id}```
+    - ```POST  {host:port}/api/usermanage/{id}/link{contact_id}```
         - [NOTES]
             - *id* field in the route is a guid instance that represent the user's id 
             - *contact_id* field in the route is a guid that represent the contact's id
