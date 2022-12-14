@@ -24,7 +24,7 @@ This task is with the goal for register a new user and link that user with a Con
     
 - Create a new endpoint to get all contacts from database in a paginated and simplified way. The specification of this new endpoint are descibe below. 
 
-    - ```POST {host:port}/api/contacts/simplified```
+    - ```GET {host:port}/api/contacts/simplified```
     - FILTER request specifiaction
         ```
         {
@@ -92,6 +92,16 @@ This task is with the goal for register a new user and link that user with a Con
         ``` 
     - here should check first if user and contact exist with the given ids, and notified if it does not exist. 
     
+
+
+### Link User Contact Process 
+
+1. Create a new User if it does't exist. You can create  anew user doing a request to endpoint ```POST  {host:port}/identity/register``` with body described in the specifications above. 
+
+2. Get the contact's is with you want to link the user. you can use the endpoint  ```GET {host:port}/api/contacts/simplified```, that will give you the contact's id thah you need to link with a user. 
+
+3. User the endpoint ```POST  {host:port}/api/{id}/link{contact_id}``` descrived in 3rd point  above to link the user with contact. If all is ok then user and contact will be linked. 
+
 
 
 
