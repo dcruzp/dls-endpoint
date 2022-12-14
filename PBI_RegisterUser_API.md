@@ -75,7 +75,7 @@ This task is with the goal for register a new user and link that user with a Con
                     from ContactEmails field , that is a list of entities of type ContactEmail, all entities that in her ContactEmailPurposes list have at leat one where her purpose is ***Main*** (with type generic: '7CBDB17B-931F-4259-842E-73A6DD4710F3'). 
                     - Pseudocode
                     ```
-                    ContactEmail.First(x => x.ContactEmailPurpose.Contain(y => y.EmailPurposeId  == '7CBDB17B-931F-4259-842E-73A6DD4710F3'))
+                    ContactEmail.First(x => x.ContactEmailPurpose.Where(y => y.EmailPurposeId  == '7CBDB17B-931F-4259-842E-73A6DD4710F3'))
                     ```     
 
 - Assing a Contact to a user. For that we need the user's id and contact. So should check if a endpoint exist for this functionality, and  if it does not exist, create a new endpoint for that. The endpoint specification will descibed below: 
