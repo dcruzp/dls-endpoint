@@ -7,7 +7,7 @@ This task is with the goal for register a new user and link that user with a Con
 - Register a new user. For that use the endpoint *register*, now the endpoint receive a body with the fields **email** and **password**. That should change for obtain more information when attempt to register a new user. Below are the specifiaction how must be the behaviour.
 
     - ```POST {host:port}/identity/register```
-    - BODY request specifiaction
+    - BODY request and fileds validations
         ```
         {
             user:   [string] 
@@ -16,6 +16,11 @@ This task is with the goal for register a new user and link that user with a Con
             phone:  [string]  
         }
         ``` 
+        - ***user*** field must by checked by the regular expression  ``` `^[a-z0-9_]{3,15}$` ```. (Allows a-z, 0-9, and '_', min 3, max 15)
+        - ***pass*** filed must by checked by the regular expression ``` `^.{6,32}$` ```. (Allows any character, min 6, max 32)
+        - ***email*** field must by checked by the regular expression: ``` `(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])` ```. this email regex and more information can by found in [here](https://stackoverflow.com/questions/201323/how-can-i-validate-an-email-address-using-a-regular-expression)
+        - ***phone*** field must by checked bby the regular expression: ``` `^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$` ``` . this phone regex and more information can by found [here](`^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$`) 
+
     - Response  
         ```
         201    Created()
