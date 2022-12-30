@@ -2,7 +2,7 @@
 
 ### Endpoints 
 
-- ### ``` GET PTO/Holidays``` 
+- ### ``` GET /PTO/Holidays``` 
 
     This endpoint return a list of all holidays. You can filter that results applying a filter to query. 
 
@@ -39,7 +39,7 @@
         the ```date``` field is a ```datetime``` that is the date when is the holiday celebrate, and the ```name``` field is a string that represent the name by witch is known.  
 
        
-- ```POST PTO/Holidays```
+- ```POST /PTO/Holidays```
     This endpoint insert a new Holiday in the table ```Holidays```. The body of this endpoint have the next structure: 
 
     - Body Structure
@@ -50,4 +50,103 @@
 
         [Note] 
             ```date``` field should have the structure of a datetime type, and ``name`` field is a string that shouldn't be more longer than 50 charactres. 
+
+- ```GET /PTO/```
+    This endpoint return a list of PTO that whas made for agents in the application. The result cna by filtered by a filter that will be descibed below. and the results will comes in a paginated structure. 
+
+    - Query Specifiaction 
+        ```
+        fromdate      [datetime]      
+        todate        [datetime]
+        agent         [guid]
+        pagenumber    [integer]
+        pagesize      [integer]
+        ```
+        [NOTES] 
+        ```fromdate``` is the field that tell you from what date you want filtr the PTO, the filed in the database for comparison is ``PTO.CreatedDate``
+
+        ```todate``` is the field that tell you to what date you want filtr the PTO, the filed in the database for comparison is ``PTO.CreatedDate``
+
+        ```agent``` is a ``Guid`` field that have to be comparer with the field in database ``PTO.agentId``.   
+
+        ```pagenumber``` is the page number the should be returned  when paginated the resultd . this field is a integer and should be greather than zero. 
+
+        ```pagesize``` is the amount of records that should be returned in the paginated result. this should be a integer greather than zero.
+
+    - Body Response 
+
+        The response body is a paginated respose that have  the next structure in the `data` field.  
+
+        ```
+        id          [guid]         - the id of the PTO record in database
+        agentId     [guid]         - id of agent that request the PTO
+        statusId    [guid]         - the id of the status for that PTO
+        status      [string]       - The name of the status 
+        comment     [string]       - this is a comment for the PTO request
+        details     [list]  this is a  array of detils 
+        ```
+        [NOTE] details field is a array of records that describe the days when the PTO is requested. The structure if this elements will be describe below.  
+        
+        - Datail Structure
+            ```
+            id:         [guid] 
+            startdate   [datetime] 
+            enddate     [datetime]
+            start:      [integer] 
+            hours:      [integer]
+            ```
+            [NOTE]
+            - `id` field is teh is that that record have in the database. 
+            - `startdate` field is the date where the PTO details begin.
+            - `enddate` field is the date until what date is the solicitude
+            - `start` is the hour when the solisitude begin
+            - `hours` is the amount of hours of the solicitude 
+
+- ```POST /PTO/newpto``` 
+    This endpoint have the funtionality to create a new request of PTO for a Agent given. The body request have the below specifications. 
+
+    - Body request 
+        ```
+        agentId:       [guid] 
+        ptoDetails:    [array] - the details descritons 
+        ```
+        [NOTE] 
+        The `ptoDetails` field is a array where are described the days that the agent are requested the vacations. The Details array elemetns have the next structure. 
+
+        - `ptoDetails` Structure 
+            ```
+            date:           [datetime]    - the days of vacation 
+            start:          [integer]     - at hour where day begin
+            hours:          [datetime]    - the amount of hours to work at day
+            ```
+        
+- ```POST /PTO/update```
+
+    This endpoint is for update the status and datails of a vacation request. The structure for that is decrubed below: 
+
+    - Body Request
+    ```
+        ptoId:              [guid]
+        agentId:            [guid]
+        statusId:           [guid]
+        ptoDetails:         [array]   -descrition of PTO details 
+    ```
+
+    [NOTE] 
+
+    - `ptoId`  field is the Key in the database of that request. That is required for find and can be updated 
+    - `agentid` field is the id of the agent that request the vacations. 
+    - `statusId` is the status current status for that request of vacations. This status can have the next values described belove: 
+        ```
+        Denied          ->   ("C62FC6DC-47C0-4BA2-B765-0210957EBEA6")
+        Approved        ->   ("03C76016-1A1B-4396-AF10-60FC047FA958")
+        Requested       ->   ("461A9258-18BE-40DF-8810-C5D6F829B0DC")
+        Cancelled       ->   ("F894A68F-6041-41FD-9804-F3555B27275B")
+        ``` 
+    - `ptodetails` structure have the same structure that `ptodetails` field in endpoint  `POST PTO/newPTO`
+
+
+
+
+
 
