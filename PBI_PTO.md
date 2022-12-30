@@ -148,5 +148,27 @@
 
 
 
+### Type Generic and Metadata added at database for this functionality 
+
+ This records are news in TypeGeneric table in Database, and are use for represent the status of PTO request
+|TypeGenericId                        | EntityMetadataId                    | Code     |   Name          |  
+| ------------------------------------| ------------------------------------|----------|-----------------|
+|9AA5A59A-3969-4ADC-9798-03B656F21E9A |2E2170B2-10F1-409E-8FA9-7461D7E39BDD |HDW       |Holiday WeekDay  |
+|3034A348-ACFC-4E0A-AC8A-2DA03C451320 |2E2170B2-10F1-409E-8FA9-7461D7E39BDD |HDS       |Saturday         |
+|253C8EB9-9406-4BA2-9C33-4279D70CF2B3 |2E2170B2-10F1-409E-8FA9-7461D7E39BDD |HDH       |Holiday Type     |
+|49317973-D40A-4B97-A355-630001B3F980 |2E2170B2-10F1-409E-8FA9-7461D7E39BDD |HDSUN     |Sunday           |
+
+The `entityMetadata` to add a table `EntityMetadata` is the show below: 
+
+|EntityMetadataId                       | Code        | Name       | 
+|---------------------------------------|-------------|------------|
+|2E2170B2-10F1-409E-8FA9-7461D7E39BDD   | HDAY        |HolidaysType|
+
+
+
+
+
+
+
 
 
