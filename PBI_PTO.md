@@ -132,17 +132,17 @@
         ptoDetails:         [array]   -descrition of PTO details 
     ```
 
-    >[**Note:]** 
-        >- `ptoId`  field is the Key in the database of that request. That is required for find and can be updated 
-        >- `agentid` field is the id of the agent that request the vacations. 
-        >- `statusId` is the status current status for that request of vacations. This status can have the next values described belove: 
-        >    ```
-        >    Denied          ->   ("C62FC6DC-47C0-4BA2-B765-0210957EBEA6")
-        >    Approved        ->   ("03C76016-1A1B-4396-AF10-60FC047FA958")
-        >    Requested       ->   ("461A9258-18BE-40DF-8810-C5D6F829B0DC")
-        >    Cancelled       ->   ("F894A68F-6041-41FD-9804-F3555B27275B")
-        >    ``` 
-        >- `ptodetails` structure have the same structure that `ptodetails` field in >endpoint  `POST PTO/newPTO`
+    [**Note:]** 
+        - `ptoId`  field is the Key in the database of that request. That is required for find and can be updated 
+        - `agentid` field is the id of the agent that request the vacations. 
+        - `statusId` is the status current status for that request of vacations. This status can have the next values described belove: 
+            ```
+            Denied          ->   ("C62FC6DC-47C0-4BA2-B765-0210957EBEA6")
+            Approved        ->   ("03C76016-1A1B-4396-AF10-60FC047FA958")
+            Requested       ->   ("461A9258-18BE-40DF-8810-C5D6F829B0DC")
+            Cancelled       ->   ("F894A68F-6041-41FD-9804-F3555B27275B")
+            ``` 
+        - `ptodetails` structure have the same structure that `ptodetails` field in >endpoint  `POST PTO/newPTO`
 
 
 
@@ -171,7 +171,7 @@ Each record of PTO have a status, and this status can be:
 - `requested` 
 - `cancelled` 
 
-The database must by filled with this data, And The table Type generic will by filled with the data on the table belove: 
+The database must by filled with the data that appear below, Type generic will by filled with the data:
 
 |TypeGenericId                       |EntityMetadataId                    |Code        |Name                |
 |------------------------------------|------------------------------------|------------|--------------------|
