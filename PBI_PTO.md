@@ -1,8 +1,20 @@
 # PBI PTO
 
-### Endpoints 
+This functionality should let you how a user of the application request vacations. The request could be decline or acepted by a manager. This request could be stored at database with the current status and all details about days that the user are request her vacations. This should be useful for get a report in a future about vacatios that the agent or user have at the end of the year. 
 
-- ### ``` GET /PTO/Holidays``` 
+
+### Endpoints List
+```
+        GET        {host:port}/PTO/Holidays
+        POST       {host:port}/PTO/Holidays
+        GET        {host:port}/PTO/
+        POST       {host:port}/PTO/newpto
+        POST       {host:port}/PTO/update 
+```
+
+### Endpoints Description
+
+- ``` GET /PTO/Holidays``` 
 
     This endpoint return a list of all holidays. You can filter that results applying a filter to query. 
 
@@ -192,7 +204,10 @@ And the table EntityMetadata must be filled with the data above:
 
 In the fallowing link, there are diagram of all tables and UI schema for PTO functionality [Diagram](https://drive.google.com/file/d/1rF6A6RfcLrSGB9jnIwXzRwkg3i550TQN/view?usp=sharing). And at this [link](https://docs.google.com/document/d/1dwOrAJLlCWywvcRD2bLGBPMKCXONuuAg-PDTiwGuPoY/edit) there are a requirements and PBI for details about PTO functionality. 
 
-![Photos][def]
 
+## Diagram of Dataabse structure 
+this is a  diagrams thas show how should be implemented the relations and fields of all table involves for this functionality. 
+
+![Photos][def]
 
 [def]: ./photos/PTO_DB_Diagram.png
