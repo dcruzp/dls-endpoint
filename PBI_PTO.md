@@ -95,7 +95,7 @@ This functionality should let you how a user of the application request vacation
         statusId    [guid]         - the id of the status for that PTO
         status      [string]       - The name of the status 
         comment     [string]       - this is a comment for the PTO request
-        details     [list]  this is a  array of detils 
+        details     [list]         - this is a  array of detils 
         ```
         [NOTE] details field is a array of records that describe the days when the PTO is requested. The structure if this elements will be describe below.  
         
@@ -200,7 +200,11 @@ And the table EntityMetadata must be filled with the data above:
 
 ## Diagram for UI and tables for database 
 
-In the fallowing link, there are diagram of all tables and UI schema for PTO functionality [Diagram](https://drive.google.com/file/d/1rF6A6RfcLrSGB9jnIwXzRwkg3i550TQN/view?usp=sharing). And at this [link](https://docs.google.com/document/d/1dwOrAJLlCWywvcRD2bLGBPMKCXONuuAg-PDTiwGuPoY/edit) there are a requirements and PBI for details about PTO functionality. 
+In the fallowing link, there are diagram of all tables and UI schema for PTO functionality 
+
+![diagramProcess](photos/PBI-12-PTO%20Management%20Draft.png)
+
+And at this [link](https://docs.google.com/document/d/1dwOrAJLlCWywvcRD2bLGBPMKCXONuuAg-PDTiwGuPoY/edit) there are requirements and PBI for details about PTO functionality. 
 
 
 ## Diagram of Dataabse structure 
