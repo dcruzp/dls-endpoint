@@ -132,18 +132,17 @@
         ptoDetails:         [array]   -descrition of PTO details 
     ```
 
-    [NOTE] 
-
-    - `ptoId`  field is the Key in the database of that request. That is required for find and can be updated 
-    - `agentid` field is the id of the agent that request the vacations. 
-    - `statusId` is the status current status for that request of vacations. This status can have the next values described belove: 
-        ```
-        Denied          ->   ("C62FC6DC-47C0-4BA2-B765-0210957EBEA6")
-        Approved        ->   ("03C76016-1A1B-4396-AF10-60FC047FA958")
-        Requested       ->   ("461A9258-18BE-40DF-8810-C5D6F829B0DC")
-        Cancelled       ->   ("F894A68F-6041-41FD-9804-F3555B27275B")
-        ``` 
-    - `ptodetails` structure have the same structure that `ptodetails` field in endpoint  `POST PTO/newPTO`
+    >[**Note:]** 
+        >- `ptoId`  field is the Key in the database of that request. That is required for find and can be updated 
+        >- `agentid` field is the id of the agent that request the vacations. 
+        >- `statusId` is the status current status for that request of vacations. This status can have the next values described belove: 
+        >    ```
+        >    Denied          ->   ("C62FC6DC-47C0-4BA2-B765-0210957EBEA6")
+        >    Approved        ->   ("03C76016-1A1B-4396-AF10-60FC047FA958")
+        >    Requested       ->   ("461A9258-18BE-40DF-8810-C5D6F829B0DC")
+        >    Cancelled       ->   ("F894A68F-6041-41FD-9804-F3555B27275B")
+        >    ``` 
+        >- `ptodetails` structure have the same structure that `ptodetails` field in >endpoint  `POST PTO/newPTO`
 
 
 
@@ -167,8 +166,6 @@ The `entityMetadata` to add a table `EntityMetadata` is the show below:
 
 
 
+## Diagram for UI and tables for database 
 
-
-
-
-
+In the fallowing link, there are diagram of all tables and UI schema for PTO functionality [Diagram](https://drive.google.com/file/d/1rF6A6RfcLrSGB9jnIwXzRwkg3i550TQN/view?usp=sharing). And at this [link](https://docs.google.com/document/d/1dwOrAJLlCWywvcRD2bLGBPMKCXONuuAg-PDTiwGuPoY/edit) there are a requirements and PBI for details about PTO functionality 
