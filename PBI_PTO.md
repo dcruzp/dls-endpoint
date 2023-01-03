@@ -191,3 +191,8 @@ And the table EntityMetadata must be filled with the data above:
 ## Diagram for UI and tables for database 
 
 In the fallowing link, there are diagram of all tables and UI schema for PTO functionality [Diagram](https://drive.google.com/file/d/1rF6A6RfcLrSGB9jnIwXzRwkg3i550TQN/view?usp=sharing). And at this [link](https://docs.google.com/document/d/1dwOrAJLlCWywvcRD2bLGBPMKCXONuuAg-PDTiwGuPoY/edit) there are a requirements and PBI for details about PTO functionality. 
+
+![Photos][def]
+
+
+[def]: ./photos/PTO_DB_Diagram.png
