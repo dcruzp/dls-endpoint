@@ -149,7 +149,8 @@
 
 ### Type Generic and Metadata added at database for this functionality 
 
- This records are news in TypeGeneric table in Database, and are use for represent the status of PTO request
+ This records are news in TypeGeneric table in Database, and are use for represent the types of Holidays. 
+
 |TypeGenericId                        | EntityMetadataId                    | Code     |   Name          |  
 | ------------------------------------| ------------------------------------|----------|-----------------|
 |9AA5A59A-3969-4ADC-9798-03B656F21E9A |2E2170B2-10F1-409E-8FA9-7461D7E39BDD |HDW       |Holiday WeekDay  |
@@ -164,8 +165,29 @@ The `entityMetadata` to add a table `EntityMetadata` is the show below:
 |2E2170B2-10F1-409E-8FA9-7461D7E39BDD   | HDAY        |HolidaysType|
 
 
+Each record of PTO have a status, and this status can be: 
+- `denied `
+- `approved`
+- `requested` 
+- `cancelled` 
+
+The database must by filled with this data, And The table Type generic will by filled with the data on the table belove: 
+
+|TypeGenericId                       |EntityMetadataId                    |Code        |Name                |
+|------------------------------------|------------------------------------|------------|--------------------|
+|C62FC6DC-47C0-4BA2-B765-0210957EBEA6|C9B2084C-FA79-4A2C-B09E-18702FD45958|PTODenied   |PTO Status Denied   |
+|03C76016-1A1B-4396-AF10-60FC047FA958|C9B2084C-FA79-4A2C-B09E-18702FD45958|PTOApproved |PTO Status Approved |
+|461A9258-18BE-40DF-8810-C5D6F829B0DC|C9B2084C-FA79-4A2C-B09E-18702FD45958|PTORequested|PTO Status Requested|
+|F894A68F-6041-41FD-9804-F3555B27275B|C9B2084C-FA79-4A2C-B09E-18702FD45958|PTOCancelled|PTO Status Cancelled|
+
+And the table EntityMetadata must be filled with the data above: 
+
+|EntityMetadataId                    |Code|Name     |
+|------------------------------------|----|---------|
+|C9B2084C-FA79-4A2C-B09E-18702FD45958|PTOS|PTOStatus|
+
 
 
 ## Diagram for UI and tables for database 
 
-In the fallowing link, there are diagram of all tables and UI schema for PTO functionality [Diagram](https://drive.google.com/file/d/1rF6A6RfcLrSGB9jnIwXzRwkg3i550TQN/view?usp=sharing). And at this [link](https://docs.google.com/document/d/1dwOrAJLlCWywvcRD2bLGBPMKCXONuuAg-PDTiwGuPoY/edit) there are a requirements and PBI for details about PTO functionality 
+In the fallowing link, there are diagram of all tables and UI schema for PTO functionality [Diagram](https://drive.google.com/file/d/1rF6A6RfcLrSGB9jnIwXzRwkg3i550TQN/view?usp=sharing). And at this [link](https://docs.google.com/document/d/1dwOrAJLlCWywvcRD2bLGBPMKCXONuuAg-PDTiwGuPoY/edit) there are a requirements and PBI for details about PTO functionality. 
